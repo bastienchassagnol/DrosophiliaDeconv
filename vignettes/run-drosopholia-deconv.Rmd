@@ -1,5 +1,5 @@
 ---
-title: "How to run standard deconvolution algorithms with Drosophilia samples"
+title: "How to run standard deconvolution algorithms with Drosophili samples"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{How to run standard deconvolution algorithms with Drosophilia samples}
