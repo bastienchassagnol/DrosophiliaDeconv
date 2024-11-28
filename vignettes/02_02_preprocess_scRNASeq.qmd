@@ -1,0 +1,87 @@
+## Relevance proof
+
+1. [No deconvolutiona glorithm used so far to infer the cellular composition from Drosophilia samples](https://hasanyone.com/?id=623714fd)
+2. [With Scispace](https://typeset.io/search?q=Has%20anyone%20developped%20or%20used%20deconvolution%20algorithms%20for%20inferring%20the%20composition%20of%20bulk%20drosophilia%20samples%3F)
+
+## Recommended scRNASeq pipeline
+
+- [Harmony and Seurat](https://github.com/omnideconv/harmony)
+- [deconvExplorer functions to retrieve or plot marker gene sets](https://github.com/omnideconv/deconvExplorer.git)
+
+## The FCA initiative 
+
+- Original paper: [Fly Cell Atlas: a single-nucleus transcriptomic atlas of the adult fruit fly](https://pmc.ncbi.nlm.nih.gov/articles/PMC8944923/#SD1), from @li2022s.
+- [Detailed supplementary material](https://pmc.ncbi.nlm.nih.gov/articles/instance/8944923/bin/NIHMS1788050-supplement-FCA_supplement.pdf).
+
+![Types of FlyCellAtlas datasets, and how to retrieve them](img/fly_cell_atlas_datasets.png)
+Two web platforms have been used to automate the processing, visualisation and downstream analyses of Drosophila samples: 
+
+- [SCope]((https://flycellatlas.org/scope)
+- [ASAP]((https://flycellatlas.org/asap)
+
+![Key steps of the FlyCellAtlas pipeline](img/fly_cell_atlas_preprocessing.png)
+
+- [The nextflow GitHub repository to process the 10X Genomic samples](https://github.com/FlyCellAtlas/data_processing). However, it relies in the back-end on the [Nextflow VSP Pipeline](https://github.com/vib-singlecell-nf/vsn-pipelines/), which is not updated anymore, preventing from simply pre-processing data at the raw level by re-running the scripts. 
+
+
+## Import and read Loom and H5AD Datasets
+
+With **Seurat**, use 
+  - `ReadH5AD`: Reads `.h5ad` files (AnnData format) or `ReadH5Seurat`: Imports `.h5Seurat` files.
+  - `ReadLoom`: Reads `.loom` files for scRNA-seq data stored in the Loom format.
+
+Alternatively, you can use **LoomR** R package, with the `read_loom_dgCMatrix` function (lower processing level), and **zellkonverter** (for H5AD), with enhanced interoperability between Python’s AnnData and R’s *SingleCellExperiment* format (another lightweight alternative to `Seurat` for simpler workflows). 
+
+## Standard scRNA-seq Pipeline for Loom/H5AD Datasets
+
+### **Data Import**: 
+
+```r
+library(Seurat)
+sc_data <- ReadH5AD("path/to/dataset.h5ad")
+# or for Loom files
+loom_data <- ReadLoom("path/to/dataset.loom")
+```
+
+### **Quality Control** and **Normalization**
+- Calculate and visualize common QC metrics (e.g., percentage of mitochondrial genes, number of detected genes per cell).
+- Filter out poor-quality cells:
+```r
+sc_data <- subset(sc_data, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)
+ sc_data <- NormalizeData(sc_data)
+```
+
+### **Feature Selection** and scaling
+- Identify highly variable features (genes):
+```r
+sc_data <- FindVariableFeatures(sc_data, selection.method = "vst", nfeatures = 2000)
+ sc_data <- ScaleData(sc_data, vars.to.regress = c("percent.mt"))
+```
+
+
+### visualisation and quality control
+
+- Perform PCA:
+```r
+sc_data <- RunPCA(sc_data, features = VariableFeatures(object = sc_data))
+```
+- Perform UMAP or t-SNE for visualization:
+```r
+sc_data <- RunUMAP(sc_data, dims = 1:10)
+```
+- Cluster the cells into distinct groups:
+```r
+sc_data <- FindNeighbors(sc_data, dims = 1:10)
+sc_data <- FindClusters(sc_data, resolution = 0.5)
+DimPlot(sc_data, reduction = "umap")
+```
+
+### Downstream analyses 
+
+- **Differential Expression Analysis**
+```r
+markers <- FindMarkers(sc_data, ident.1 = 1, ident.2 = 0)
+```
+
+- **Integration with Other Datasets**
+
