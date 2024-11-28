@@ -3,9 +3,8 @@ project:
   type: website
   output-dir: ../docs
   render:
-    - index.qmd
-    - about.qmd
     - 01_download_datasets_and_metadata.qmd
+    - 02_01_preprocess_bulkRNASeq.qmd
     - 02_02_preprocess_scRNASeq.qmd
 
 # Website general layout
@@ -19,10 +18,6 @@ website:
     style: "floating"
     search: true
     contents:
-      - section: "Introduction"
-        contents:
-          - index.qmd
-          - about.qmd
       - section: "Download datasets"
         contents:
           - 01_download_datasets_and_metadata.qmd

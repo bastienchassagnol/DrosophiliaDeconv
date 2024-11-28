@@ -89,7 +89,7 @@ metadata_DRscDB <- read_html(url_DRscDB) |> # read a HTML file
 
 [^2]: It appears that the [Large Dataset metadata file](https://wiki.flybase.org/wiki/FlyBase:Downloads_Overview#Large_dataset_metadata) only contains primary and foreign keys for each Drosophila experience and individual, constraining to an external linkout to retrieve such metadata
 
-### The ModENCODE pheno data {#modencode-metadata}
+### The ModENCODE pheno data {#sec-modencode-metadata}
 
 -   The easiest way I could find: retrieve metadata from [JBrowse FlyBase Wiki website](https://wiki.flybase.org/wiki/FlyBase:ModENCODE_data_at_FlyBase#RNA-Seq_JBrowse_Track_Listing)
 
@@ -129,6 +129,8 @@ readr::write_csv(ModENCODE_databases_formatted,
 -   To finalise the annotation, we're going to use the [Rest API GET HitList](https://flybase.github.io/api/swagger-ui/#/HitList/getFlyBaseHitList), programmatic access enabled by the FlyBase website:
 
 ```{r API-FlyBase-modENCODE-metadata}
+#| lst-label: lst-API-FlyBase-modENCODE-metadata
+#| lst-cap: REST API to explore the FlyBase ModEncode dataset collection
 # Which individual experiences we want metadata from?
 flybase_ids <- c("FBlc0000215", "FBlc0000216", "FBlc0000217")
 
@@ -167,7 +169,7 @@ The [Excel Workbook](https://flyatlas.gla.ac.uk/FlyAtlas2/index.html?page=help) 
 [^4]: Besides, as shown in [@zeeberg2004bb] demonstrated that up to $30\%$ published papers contain mangled gene names, most of them being induced by Excel spreadsheets' auto-completion.
 
 -   In the FPKM/RPKM file stored in the web encyclopaedia `FlyBase`, the column headers identifying uniquely each sample describe the developmental stage, the sex and the original tissue. However, it's not really practical to parse, nor follows an unique identifier composition. Example: `RNA-Seq_Profile_FlyAtlas2_Adult_Female_Brain_(FBlc0003619)`.
-    -   However, we can use the same REST API trick mentioned in @API-FlyBase-modENCODE-metadata to get some additional information (column `title`).
+    - However, we can use the same REST API trick mentioned in @lst-API-FlyBase-modENCODE-metadata to get some additional information (column `title`).
 
 ```{r API-FlyBase-flyAtlas2-metadata, echo=FALSE}
 
@@ -698,13 +700,13 @@ More documentation on the - Main facilities delivered by the ENA web server, inc
 ENA and SRA structures and layout.
 :::
 
-# Programmatic access to FlyBase {.appendix}
+## Programmatic access to FlyBase {.appendix}
 
 To retrieve datasets stored in FlyBase, such as sex, tissue, or lab information, in an automated and programmatic manner, you can use of these three approaches, ordered by increasing complexity but scalability:
 
 ------------------------------------------------------------------------
 
-## **Precomputed Metadata Files**:
+### **Precomputed Metadata Files**:
 
 They are accessible using the [FlyBase FTP](https://flybase.org/downloads/bulkdata): - [Wiki Documentation of the Databases structure and Overview](https://wiki.flybase.org/wiki/FlyBase:Downloads_Overview)
 
@@ -763,7 +765,7 @@ R.utils::gunzip(output_file, output_unzipped, remove = TRUE)
 
 ------------------------------------------------------------------------
 
-## **Using the FlyBase REST API lightweight approach**:
+### **Using the FlyBase REST API lightweight approach**:
 
 The REST API allows for dynamic metadata retrieval via programmatic queries. In particular, the `GET` request is used to retrieve data from a server. It is however restricted by URL length. Here's a linux example below, using the `curl` command, and using one parameter composed of several IDs separated by commas:
 
@@ -771,11 +773,11 @@ The REST API allows for dynamic metadata retrieval via programmatic queries. In 
 curl -X GET "https://api.flybase.org/api/v1.0/hitlist/fetch/FBlc0000215,FBlc0000216,FBlc0000217" -H "Accept: application/json"
 ```
 
-Report to @modencode-metadata for a R high-user interface, using the complementary between the `jsonlite` and `httr2` packages.
+Report to @sec-modencode-metadata for a R high-user interface, using the complementary between the `jsonlite` and `httr2` packages.
 
 ------------------------------------------------------------------------
 
-## **Using the FlyBase Chado PostgreSQL Database**
+### **Using the FlyBase Chado PostgreSQL Database**
 
 That's definitely the most challenging, but also the safest and most scalable approach. In brief, you import the whole database and its relational scheme to your local computer or server.
 
