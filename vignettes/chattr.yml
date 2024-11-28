@@ -1,0 +1,22 @@
+default:
+  max_data_files: 10.0
+  max_data_frames: 10.0
+  include_doc_contents: yes
+  include_history: yes
+  provider: OpenAI - GitHub Copilot Chat
+  path: https://api.githubcopilot.com/chat/completions
+  model: gpt-4
+  model_arguments:
+    stream: yes
+  system_msg: You are a helpful coding assistant
+  label: Copilot (GitHub)
+  mode: copilot
+  token_url: https://api.github.com/copilot_internal/v2/token
+console:
+  max_data_files: 0
+  max_data_frames: 0
+  include_doc_contents: no
+notebook:
+  max_data_files: 0
+  max_data_frames: 0
+  include_doc_contents: no

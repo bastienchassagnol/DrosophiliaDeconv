@@ -49,3 +49,7 @@ po/*~
 rsconnect/
 .Rproj.user
 inst/doc
+
+# article metadata
+article/doc
+data/FlyAtlas2_2024.01.08.sql
