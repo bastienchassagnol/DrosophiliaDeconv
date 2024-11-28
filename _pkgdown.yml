@@ -1,4 +1,35 @@
 url: https://bastienchassagnol.github.io/DrosophiliaDeconv/
+
+home:
+  title: Build reference profiles for reference-based deconvolution algorithms for Drosophila samples
+
+authors:
+  Bastien CHASSAGNOL:
+    href: https://github.com/bastienchassagnol/
+  Savandara Besse:
+    href: https://www.linkedin.com/in/savandara-besse/
+  Posit Software, PBC:
+    href: https://omnideconv.org/
+
 template:
   bootstrap: 5
+  light-switch: true
+  bslib:
+    primary: "#0054AD"
+    border-radius: 0.5rem
+    btn-border-radius: 0.25rem
+    danger: "#A6081A"
+
+articles:
+- title: Generate purified reference profiles
+  navbar: ~
+  contents:
+  - download
+  - preprocess_bulkRNASeq
+  - preprocess_scRNASeq
+# if there are plenty of visitors to some point
+# development:
+#   mode: auto
+
+
 

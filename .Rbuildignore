@@ -4,3 +4,11 @@
 ^docs$
 ^pkgdown$
 ^\.github$
+^article bioinformatics$
+^quarto_website$
+^LICENSE\.md$
+^vignettes/\.quarto$
+^vignettes/articles/\.quarto$
+^vignettes/articles/*_files$
+^vignettes/articles$
+^vignettes/*_files$

@@ -1,4 +1,0 @@
-# Key steps for bulk RNASeq analysis
-
-Job for Savandara Besse, to complement with. 
-

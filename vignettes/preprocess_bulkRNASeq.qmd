@@ -1,0 +1,15 @@
+---
+title: "Analyse bulk RNASeq experiences"
+vignette: >
+  %\VignetteIndexEntry{Analyse bulk RNASeq experiences}
+  %\VignetteEngine{quarto::html}
+  %\VignetteEncoding{UTF-8}
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: '#>'
+---
+
+# Key steps for bulk RNASeq analysis
+
+Job for Savandara Besse, to complement with. 

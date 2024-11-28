@@ -1,4 +1,13 @@
-# Protocol to downnload and retrieve metadata to build reference datasets
+---
+title: "Browse and download Biobases"
+bibliography: references.bib
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: '#>'
+---
+
+# Protocol to download and retrieve metadata to build reference datasets
 
 ```{r setup, warning = FALSE, message = FALSE}
 # Tidyverse libraries

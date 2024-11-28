@@ -1,3 +1,16 @@
+---
+title: "Analyse single cell RNASeq experiences"
+vignette: >
+  %\VignetteIndexEntry{Analyse single cell RNASeq experiences}
+  %\VignetteEngine{quarto::html}
+  %\VignetteEncoding{UTF-8}
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: '#>'
+---
+
+
 ## Relevance proof
 
 1. [No deconvolutiona glorithm used so far to infer the cellular composition from Drosophilia samples](https://hasanyone.com/?id=623714fd)
@@ -84,4 +97,3 @@ markers <- FindMarkers(sc_data, ident.1 = 1, ident.2 = 0)
 ```
 
 - **Integration with Other Datasets**
-
