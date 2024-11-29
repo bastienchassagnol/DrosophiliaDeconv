@@ -1,14 +1,19 @@
 ---
 title: "Browse and download Biobases"
-vignette: >
-  %\VignetteIndexEntry{Analyse bulk RNASeq experiences}
-  %\VignetteEngine{quarto::html}
-  %\VignetteEncoding{UTF-8}
-bibliography: references.bib
-knitr:
-  opts_chunk:
-    collapse: true
-    comment: '#>'
+# Global metadata
+author: "Bastien CHASSAGNOL and Savandara BESSE"
+date: last-modified
+bibliography: ../../vignettes/references.bib
+
+# General format for each html page
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    toc-expand: 2
+    self-contained: true
+    embed-resources: true
 ---
 
 # Protocol to download and retrieve metadata to build reference datasets

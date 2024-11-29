@@ -1,8 +1,10 @@
 ---
 title: "Analyse single cell RNASeq experiences"
+output: rmarkdown::html_vignette
+bibliography: references.bib
 vignette: >
   %\VignetteIndexEntry{Analyse single cell RNASeq experiences}
-  %\VignetteEngine{quarto::html}
+  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 knitr:
   opts_chunk:

@@ -1,0 +1,14 @@
+---
+title: "How to reproduce results?"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{How to reproduce results?}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: '#>'
+---
+
+Let's get started with basics.

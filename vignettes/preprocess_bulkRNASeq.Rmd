@@ -1,13 +1,11 @@
 ---
 title: "Analyse bulk RNASeq experiences"
+output: rmarkdown::html_vignette
+bibliography: references.bib
 vignette: >
   %\VignetteIndexEntry{Analyse bulk RNASeq experiences}
-  %\VignetteEngine{quarto::html}
+  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
-knitr:
-  opts_chunk:
-    collapse: true
-    comment: '#>'
 ---
 
 # Key steps for bulk RNASeq analysis
