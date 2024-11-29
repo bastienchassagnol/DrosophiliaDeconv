@@ -2,10 +2,11 @@ pandoc: 3.1.11
 pkgdown: 2.1.1.9000
 pkgdown_sha: 8b10575ae7835cd4cbccff12b675a192e6bb84a0
 articles:
+  download: download.html
   DrosophiliaDeconv: DrosophiliaDeconv.html
   preprocess_bulkRNASeq: preprocess_bulkRNASeq.html
   preprocess_scRNASeq: preprocess_scRNASeq.html
-last_built: 2024-11-29T10:21Z
+last_built: 2024-11-29T13:24Z
 urls:
   reference: https://bastienchassagnol.github.io/DrosophiliaDeconv/reference
   article: https://bastienchassagnol.github.io/DrosophiliaDeconv/articles
