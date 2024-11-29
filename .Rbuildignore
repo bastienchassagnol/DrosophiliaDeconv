@@ -12,3 +12,4 @@
 ^vignettes/articles/*_files$
 ^vignettes/articles$
 ^vignettes/*_files$
+^CONTRIBUTING.md$

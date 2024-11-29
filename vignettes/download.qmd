@@ -1,5 +1,9 @@
 ---
 title: "Browse and download Biobases"
+vignette: >
+  %\VignetteIndexEntry{Analyse bulk RNASeq experiences}
+  %\VignetteEngine{quarto::html}
+  %\VignetteEncoding{UTF-8}
 bibliography: references.bib
 knitr:
   opts_chunk:
