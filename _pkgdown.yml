@@ -36,6 +36,6 @@ articles:
 # - name: download
 #   title: Browse and download Biobases.
 #   description: Compare distinct approaches to fetch data from Biomodels, ERA and SRA ftps and gene annotation databases.
-#   href: https://github.com/bastienchassagnol/DrosophiliaDeconv/tree/main/inst/html/download.html
+#   href: https://github.com/bastienchassagnol/DrosophiliaDeconv/tree/main/inst/www/download.html
 
 

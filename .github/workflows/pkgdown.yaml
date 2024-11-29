@@ -1,10 +1,10 @@
 # Workflow derived from https://github.com/r-lib/actions/tree/v2/examples
 # Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
 on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
+  # push:
+  #   branches: [main, master]
+  # pull_request:
+  #   branches: [main, master]
   release:
     types: [published]
   workflow_dispatch: # Allow manual triggering
@@ -32,7 +32,7 @@ jobs:
         with:
           use-public-rspm: true
 # see issue https://github.com/r-lib/pkgdown/issues/2733 for explanation
-      - uses: r-lib/actions/setup-r-dependencies@v2      
+      - uses: r-lib/actions/setup-r-dependencies@v2
         with:
          extra-packages: github::ethanbass/pkgdown@qmd_articles, local::.
          needs: website

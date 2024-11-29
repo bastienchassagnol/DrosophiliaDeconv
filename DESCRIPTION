@@ -20,3 +20,17 @@ URL: https://bastienchassagnol.github.io/DrosophiliaDeconv/, https://github.com/
 BugReports: https://github.com/bastienchassagnol/DrosophiliaDeconv/issues
 Config/Needs/website: quarto, usethis
 SystemRequirements: pandoc
+Imports: 
+    curl,
+    DBI,
+    dbplyr,
+    ggplot2,
+    httr2,
+    jsonlite,
+    purrr,
+    RCurl,
+    readr,
+    RSQLite,
+    rvest,
+    stringr,
+    tidyr
