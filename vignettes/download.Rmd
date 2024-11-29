@@ -20,12 +20,9 @@ knitr:
 ---
 
 
-# Protocol to download and retrieve metadata to build reference datasets
+## Protocol to download and retrieve metadata to build reference datasets
 
-**For a nice HTML + quarto presentation, with functional figure, lst and other float references; citations and nice call-out boxes, download locally self-embedded HTML file [download.html](https://github.com/bastienchassagnol/DrosophiliaDeconv/blob/main/inst/html/download.html).** 
-
-=======
-# Protocol to download and retrieve metadata to build reference datasets
+**For a nice HTML + quarto presentation, with functional figure, lst and other float references; citations and nice call-out boxes, download locally self-embedded HTML file [download.html](https://github.com/bastienchassagnol/DrosophiliaDeconv/blob/main/inst/www/download.html).** 
 
 ```{r setup, warning = FALSE, message = FALSE}
 # Tidyverse libraries
